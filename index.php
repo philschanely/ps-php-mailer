@@ -1,7 +1,9 @@
 <?php
 
 // Allow calls from elsewhere :)
+header("Access-Control-Allow-Headers: Access-Control-Allow-Headers, Origin, Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Header");
 header("Access-Control-Allow-Origin: *");
+header('Content-Type: application/json');
 
 // Toggle displaying errors while testing implementation
 ini_set('display_errors', 1);
@@ -102,6 +104,6 @@ if (!$sent_mail) {
 $response->response = 'SUCCESS';
 $response->headers = $headers;
 $response->message = $message;
-echo '<pre>';
+// echo '<pre>';
 echo json_encode($response);
-echo '</pre>';
+// echo '</pre>';
